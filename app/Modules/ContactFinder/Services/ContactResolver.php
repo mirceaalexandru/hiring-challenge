@@ -26,8 +26,7 @@ final class ContactResolver
         private readonly array $providers,
         private readonly NameMatcher $names,
         private readonly ConfidenceScorer $scorer,
-    ) {
-    }
+    ) {}
 
     public function resolve(string $companyName, string $mailingAddress): ResolvedContact
     {
@@ -135,7 +134,7 @@ final class ContactResolver
     }
 
     /**
-     * @return array{0: ?string, 1: bool}  [chosen phone, corroborated across sources]
+     * @return array{0: ?string, 1: bool} [chosen phone, corroborated across sources]
      */
     private function resolvePhone(?ProviderResult $listing, ?ProviderResult $enrichment): array
     {

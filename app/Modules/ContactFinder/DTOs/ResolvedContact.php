@@ -13,8 +13,8 @@ namespace App\Modules\ContactFinder\DTOs;
 final readonly class ResolvedContact
 {
     /**
-     * @param list<string> $sources     contributing provider keys, e.g. ["registry","listing"]
-     * @param list<string> $sourceUrls  mock:// provenance, one per contributing source
+     * @param  list<string>  $sources  contributing provider keys, e.g. ["registry","listing"]
+     * @param  list<string>  $sourceUrls  mock:// provenance, one per contributing source
      */
     public function __construct(
         public string $companyName,
@@ -28,8 +28,7 @@ final readonly class ResolvedContact
         public bool $needsHumanReview,
         public string $reason,
         public ScoreBreakdown $breakdown,
-    ) {
-    }
+    ) {}
 
     /** @return array<string,string> Row shaped for CSV / table output. */
     public function toRow(): array

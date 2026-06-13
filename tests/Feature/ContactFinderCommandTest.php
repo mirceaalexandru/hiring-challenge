@@ -71,6 +71,16 @@ final class ContactFinderCommandTest extends TestCase
         }
     }
 
+    public function test_missing_input_fails_gracefully(): void
+    {
+        $this->artisan('contacts:find', [
+            '--input' => '/no/such/companies.csv',
+            '--output' => $this->output,
+        ])->assertFailed();
+
+        $this->assertFileDoesNotExist($this->output);
+    }
+
     /** @return list<array<string,string>> */
     private function readCsv(string $path): array
     {
@@ -93,7 +103,7 @@ final class ContactFinderCommandTest extends TestCase
     }
 
     /**
-     * @param list<array<string,string>> $rows
+     * @param  list<array<string,string>>  $rows
      * @return array<string,string>
      */
     private function findRow(array $rows, string $company): array

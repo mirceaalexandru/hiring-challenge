@@ -13,7 +13,7 @@ final class NameMatcherTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->matcher = new NameMatcher();
+        $this->matcher = new NameMatcher;
     }
 
     public function test_strips_titles_and_parentheticals(): void

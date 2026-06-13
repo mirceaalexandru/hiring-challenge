@@ -26,18 +26,28 @@ final class ConfidenceScorer
 
     // --- identity weights ---
     public const REGISTRY_NAME = 30;
+
     public const LISTING_NAME = 15;
+
     public const NAME_AGREEMENT = 20;        // >=2 sources, same person
+
     public const NAME_CONFLICT_PENALTY = -45; // sources name different people
+
     public const ROLE_DECISION_MAKER = 15;    // owner / founder / AP / CFO / president
+
     public const ROLE_MANAGER = 5;            // office/other manager (fallback persona)
+
     public const ROLE_REGISTERED_AGENT = -10; // explicitly NOT a decision-maker
+
     public const EMAIL_NAME_CORROBORATION = 10; // email local-part confirms the person
 
     // --- channel weights ---
     public const PERSONAL_EMAIL = 20;   // email tied to the person
+
     public const GENERIC_EMAIL = 5;     // info@/office@ — reachable but not a person
+
     public const PHONE_PRESENT = 10;
+
     public const PHONE_CORROBORATED = 20; // listing phone == enrichment phone
 
     /**

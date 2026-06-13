@@ -13,7 +13,7 @@ final class ConfidenceScorerTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->scorer = new ConfidenceScorer();
+        $this->scorer = new ConfidenceScorer;
     }
 
     public function test_three_agreeing_sources_score_at_the_ceiling(): void

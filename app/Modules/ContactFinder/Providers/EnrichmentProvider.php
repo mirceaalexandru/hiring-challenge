@@ -15,9 +15,7 @@ use App\Modules\ContactFinder\DTOs\ProviderResult;
 final class EnrichmentProvider implements ContactProvider
 {
     /** @param array<string,mixed> $data decoded fixture, keyed by company_name */
-    public function __construct(private readonly array $data)
-    {
-    }
+    public function __construct(private readonly array $data) {}
 
     public function key(): string
     {

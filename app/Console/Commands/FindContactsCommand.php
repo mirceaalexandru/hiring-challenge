@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Console\Commands;
 
 use App\Modules\ContactFinder\DTOs\ResolvedContact;
+use App\Modules\ContactFinder\Services\ConfidenceScorer;
 use App\Modules\ContactFinder\Support\ContactResolverFactory;
 use App\Modules\ContactFinder\Support\MockDataLoader;
 use Illuminate\Console\Command;
@@ -132,7 +133,7 @@ final class FindContactsCommand extends Command
             '%d companies → %d auto-emitted (≥%d), %d to human review. Written to %s',
             count($resolved),
             count($emitted),
-            \App\Modules\ContactFinder\Services\ConfidenceScorer::THRESHOLD,
+            ConfidenceScorer::THRESHOLD,
             count($resolved) - count($emitted),
             $output,
         ));

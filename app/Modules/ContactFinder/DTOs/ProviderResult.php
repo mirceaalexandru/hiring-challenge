@@ -20,8 +20,7 @@ final readonly class ProviderResult
         public ?string $phone = null,
         public ?int $providerConfidence = null,
         public ?string $sourceUrl = null,
-    ) {
-    }
+    ) {}
 
     public function hasName(): bool
     {

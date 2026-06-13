@@ -14,13 +14,12 @@ namespace App\Modules\ContactFinder\DTOs;
 final readonly class ScoreBreakdown
 {
     /**
-     * @param array<string,int> $factors  label => points contributed (for audit/explainability)
+     * @param  array<string,int>  $factors  label => points contributed (for audit/explainability)
      */
     public function __construct(
         public int $identity,
         public int $channel,
         public int $total,
         public array $factors,
-    ) {
-    }
+    ) {}
 }

@@ -26,8 +26,8 @@ final class ContactResolverFactory
                 new ListingProvider($mockData),
                 new EnrichmentProvider($mockData),
             ],
-            names: new NameMatcher(),
-            scorer: new ConfidenceScorer(),
+            names: new NameMatcher,
+            scorer: new ConfidenceScorer,
         );
     }
 }

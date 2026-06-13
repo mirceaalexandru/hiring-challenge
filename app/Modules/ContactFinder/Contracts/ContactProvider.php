@@ -16,8 +16,8 @@ use App\Modules\ContactFinder\DTOs\ProviderResult;
 interface ContactProvider
 {
     /**
-     * @return ProviderResult|null  Null means "this source found nothing"
-     *                              (key absent, or no usable fields).
+     * @return ProviderResult|null Null means "this source found nothing"
+     *                             (key absent, or no usable fields).
      */
     public function lookup(string $companyName): ?ProviderResult;
 
